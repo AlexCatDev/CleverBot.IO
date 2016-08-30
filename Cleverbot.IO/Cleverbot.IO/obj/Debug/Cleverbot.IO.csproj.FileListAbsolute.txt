@@ -1,0 +1,4 @@
+c:\users\alex\documents\visual studio 2015\Projects\Cleverbot.IO\Cleverbot.IO\bin\Debug\Cleverbot.IO.dll
+c:\users\alex\documents\visual studio 2015\Projects\Cleverbot.IO\Cleverbot.IO\bin\Debug\Cleverbot.IO.pdb
+c:\users\alex\documents\visual studio 2015\Projects\Cleverbot.IO\Cleverbot.IO\obj\Debug\Cleverbot.IO.dll
+c:\users\alex\documents\visual studio 2015\Projects\Cleverbot.IO\Cleverbot.IO\obj\Debug\Cleverbot.IO.pdb
