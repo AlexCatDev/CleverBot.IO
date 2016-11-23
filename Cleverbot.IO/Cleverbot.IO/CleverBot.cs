@@ -10,13 +10,17 @@ namespace Cleverbot
         public string User { get; protected set; }
         public string Key { get; protected set; }
 
+        public static CleverBot New(string user, string key, string nick = "") {
+            return CleverBotFactory.Create(user, key, nick);
+        }
+
         public CleverBot(CleverBotPostResult Status, string user, string key) {
             CleverBotStatus = Status;
             User = user;
             Key = key;
         }
 
-        public CleverBotResponse Ask(string Question) {
+        public CleverBotResponse Say(string Question) {
             using (var client = new HttpClient()) {
                 var values = new Dictionary<string, string>
                 {
