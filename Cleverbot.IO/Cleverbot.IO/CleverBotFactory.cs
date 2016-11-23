@@ -1,7 +1,7 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Net.Http;
-using System.Web.Script.Serialization;
 
 namespace Cleverbot
 {
@@ -25,16 +25,14 @@ namespace Cleverbot
 
                 var data = response.Content.ReadAsStringAsync().Result;
 
-
-                JavaScriptSerializer jss = new JavaScriptSerializer();
-                CleverBotPostResult result = jss.Deserialize<CleverBotPostResult>(data);
+                CleverBotPostResult result = JsonConvert.DeserializeObject<CleverBotPostResult>(data);
 
                 if (result.Status == "success") {
-                    Console.WriteLine("Successfully created cleverbot instance.");
+                    //Console.WriteLine("Successfully created cleverbot instance.");
                     return new CleverBot(result, User, Key);
                 }
                 else {
-                    Console.WriteLine("Failed to create cleverbot instance check [User & Key] status " + result.Status);
+                    //Console.WriteLine("Failed to create cleverbot instance check [User & Key] status " + result.Status);
                     return null;
                 }
             }

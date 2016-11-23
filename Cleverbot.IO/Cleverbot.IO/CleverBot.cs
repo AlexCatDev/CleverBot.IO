@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using Newtonsoft.Json;
+using System.Collections.Generic;
 using System.Net.Http;
-using System.Web.Script.Serialization;
 
 namespace Cleverbot
 {
@@ -26,14 +26,13 @@ namespace Cleverbot
                     { "text", Question }
                 };
 
-
                 var content = new FormUrlEncodedContent(values);
 
                 var response = client.PostAsync("https://cleverbot.io/1.0/ask", content).Result;
 
                 var data = response.Content.ReadAsStringAsync().Result;
-                JavaScriptSerializer jss = new JavaScriptSerializer();
-                return jss.Deserialize<CleverBotResponse>(data);
+
+                return JsonConvert.DeserializeObject<CleverBotResponse>(data);
             }
         }
     }
